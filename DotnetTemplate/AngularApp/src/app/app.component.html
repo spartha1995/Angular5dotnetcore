@@ -1,35 +1,82 @@
-<span>Welcome to Angular 5</span>
+<span>Angular App</span>
 
-<h2>Product List - </h2>
-<kendo-grid [data]="gridData">
-  <kendo-grid-column field="ProductID" title="Product ID" width="120">
+<br />
+<br />
+
+<span>
+  Kendo Grid
+</span>
+
+<kendo-grid [data]="gridData" [height]="410">
+  <kendo-grid-column field="ProductID" title="ID" width="40">
   </kendo-grid-column>
-  <kendo-grid-column field="ProductName" title="Product Name">
+  <kendo-grid-column field="ProductName" title="Name" width="250">
   </kendo-grid-column>
-  <kendo-grid-column field="UnitPrice" title="Unit Price" width="230">
+  <kendo-grid-column field="Category.CategoryName" title="Category">
   </kendo-grid-column>
-  <kendo-grid-column field="Discontinued" width="120">
-    <ng-template kendoCellTemplate let-dataItem>
+  <kendo-grid-column field="UnitPrice" title="Price" width="80">
+  </kendo-grid-column>
+  <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+  </kendo-grid-column>
+  <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+    <ng-template kendoGridCellTemplate let-dataItem>
       <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
     </ng-template>
   </kendo-grid-column>
 </kendo-grid>
+
 <br />
 <br />
-<span>
-  Kendo Datapicker
-</span>
+<span>Kendo AutoComplete</span>
+
 <div class="example-wrapper">
-  <p>T-shirt size:</p>
-  <kendo-dropdownlist [data]="listItems">
-  </kendo-dropdownlist>
+  <p>Type the name of a European country:</p>
+  <kendo-autocomplete [data]="listItems"
+                      [placeholder]="'e.g. Denmark'"
+                      class="countries">
+  </kendo-autocomplete>
 </div>
 
 <br />
 <br />
+<span>Kendo ComboBox</span>
+<div class="example-config">
+  <input id="ac" type="checkbox" [(ngModel)]="allowCustom">
+  <label for="ac">Allow custom values</label>
+</div>
+<div class="example-wrapper">
+  <p>Favorite sport:</p>
+  <kendo-combobox [data]="listItemsCombo" [allowCustom]="allowCustom">
+  </kendo-combobox>
+</div>
+<br />
+<br />
+<span>DropDownList</span>
+<div class="example-wrapper">
+  <p>T-shirt size:</p>
+  <kendo-dropdownlist [data]="listItemsdrp">
+  </kendo-dropdownlist>
+</div>
+<br />
+<br />
 
-<span>
-  Time Picker
-</span>
+<span>Kendo Switch</span>
+<kendo-switch [(ngModel)]="checked"></kendo-switch>
+
+<br />
+<br />
 
 
+
+<span>Kendo charts</span>
+
+<kendo-chart [categoryAxis]="{ categories: categories }">
+  <kendo-chart-title text="Gross domestic product growth /GDP annual %/"></kendo-chart-title>
+  <kendo-chart-legend position="bottom" orientation="horizontal"></kendo-chart-legend>
+  <kendo-chart-tooltip format="{0}%"></kendo-chart-tooltip>
+  <kendo-chart-series>
+    <kendo-chart-series-item *ngFor="let item of series" type="line" style="smooth"
+                             [data]="item.data" [name]="item.name">
+    </kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>

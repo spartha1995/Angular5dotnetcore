@@ -7,41 +7,80 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Products_1 = require("../app/Model/Products");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'app';
-        this.gridData = [{
-                "ProductID": 1,
-                "ProductName": "Chai",
-                "UnitPrice": 18.00,
-                "Discontinued": true
+        this.gridData = Products_1.Products;
+        this.series = [{
+                name: "India",
+                data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
             }, {
-                "ProductID": 2,
-                "ProductName": "Chang",
-                "UnitPrice": 19.0000,
-                "Discontinued": false
+                name: "Russian Federation",
+                data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
             }, {
-                "ProductID": 3,
-                "ProductName": "Aniseed Syrup",
-                "UnitPrice": 10.0000,
-                "Discontinued": false
+                name: "Germany",
+                data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
             }, {
-                "ProductID": 4,
-                "ProductName": "Chef Anton's Cajun Seasoning",
-                "UnitPrice": 22.0000,
-                "Discontinued": false
-            }, {
-                "ProductID": 5,
-                "ProductName": "Chef Anton's Gumbo Mix",
-                "UnitPrice": 21.3500,
-                "Discontinued": false
-            }, {
-                "ProductID": 6,
-                "ProductName": "Grandma's Boysenberry Spread",
-                "UnitPrice": 25.0000,
-                "Discontinued": false
+                name: "World",
+                data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
             }];
-        this.listItems = ["X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large"];
+        this.categories = [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011];
+        this.listItems = [
+            "Albania",
+            "Andorra",
+            "Armenia",
+            "Austria",
+            "Azerbaijan",
+            "Belarus",
+            "Belgium",
+            "Bosnia & Herzegovina",
+            "Bulgaria",
+            "Croatia",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Estonia",
+            "Finland",
+            "France",
+            "Georgia",
+            "Germany",
+            "Greece",
+            "Hungary",
+            "Iceland",
+            "Ireland",
+            "Italy",
+            "Kosovo",
+            "Latvia",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macedonia",
+            "Malta",
+            "Moldova",
+            "Monaco",
+            "Montenegro",
+            "Netherlands",
+            "Norway",
+            "Poland",
+            "Portugal",
+            "Romania",
+            "Russia",
+            "San Marino",
+            "Serbia",
+            "Slovakia",
+            "Slovenia",
+            "Spain",
+            "Sweden",
+            "Switzerland",
+            "Turkey",
+            "Ukraine",
+            "United Kingdom",
+            "Vatican City"
+        ];
+        this.allowCustom = true;
+        this.listItemsCombo = ["Baseball", "Basketball", "Cricket", "Field Hockey", "Football", "Table Tennis", "Tennis", "Volleyball"];
+        this.listItemsdrp = ["X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large"];
+        this.checked = true;
     }
     AppComponent = __decorate([
         core_1.Component({

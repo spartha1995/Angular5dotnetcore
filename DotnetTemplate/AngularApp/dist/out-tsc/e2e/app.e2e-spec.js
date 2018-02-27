@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_po_1 = require("./app.po");
-describe('angular-template App', function () {
+describe('angular-app App', function () {
     var page;
     beforeEach(function () {
         page = new app_po_1.AppPage();

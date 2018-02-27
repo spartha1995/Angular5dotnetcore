@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
 var kendo_angular_grid_1 = require("@progress/kendo-angular-grid");
-var http_1 = require("@angular/http");
-var kendo_angular_dropdowns_1 = require("@progress/kendo-angular-dropdowns");
 var animations_1 = require("@angular/platform-browser/animations");
-var kendo_angular_scrollview_1 = require("@progress/kendo-angular-scrollview");
+var kendo_angular_charts_1 = require("@progress/kendo-angular-charts");
+var kendo_angular_dropdowns_1 = require("@progress/kendo-angular-dropdowns");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var kendo_angular_inputs_1 = require("@progress/kendo-angular-inputs");
+require("hammerjs");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,13 +25,14 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent
             ],
             imports: [
-                platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule,
-                kendo_angular_dropdowns_1.DropDownsModule,
+                forms_1.ReactiveFormsModule,
+                platform_browser_1.BrowserModule,
                 kendo_angular_grid_1.GridModule,
                 animations_1.BrowserAnimationsModule,
-                kendo_angular_scrollview_1.ScrollViewModule
+                kendo_angular_charts_1.ChartsModule,
+                kendo_angular_dropdowns_1.DropDownsModule,
+                kendo_angular_inputs_1.InputsModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

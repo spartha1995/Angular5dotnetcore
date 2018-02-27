@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-DotnetTemplate-C5CFAE31-363A-4493-B134-1CE7DB1ECA4E</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="AngularApp\src\app\Model\Products.ts" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="HangFire" Version="1.6.17" />
@@ -18,6 +22,10 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="AngularApp\src\app\Model\Products.ts" />
   </ItemGroup>
 
 </Project>

@@ -1,30 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { GridModule } from '@progress/kendo-angular-grid';
-import { HttpModule } from '@angular/http';
-import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
 
-
+import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     FormsModule,
-    HttpModule,
-    DropDownsModule,
+    ReactiveFormsModule,
+    BrowserModule,
     GridModule,
     BrowserAnimationsModule,
-    ScrollViewModule
-   ],
+    ChartsModule,
+    DropDownsModule,
+    InputsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
