@@ -1,0 +1,17 @@
+language: csharp 
+dist: trusty
+os: linux
+mono: none
+dotnet: 2.1.4
+services:
+- docker
+before_install:
+- npm install -g npm    
+install:
+- dotnet restore ./Template/DotnetTemplate.sln
+script:
+ - dotnet --info
+ - dotnet build ./Template/DotnetTemplate.sln
+ - ls -a
+ - chmod +x build.sh && bash build.sh
+ - chmod +x deploy.sh && bash deploy.sh 

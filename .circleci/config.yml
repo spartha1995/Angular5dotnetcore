@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:6-browsers
+      
+    steps:
+      - checkout
+      - run: 
+          name: Install NPM
+          command: cd ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp && npm install && cd ../../../
+
+      - save_cache:
+          key: npm-cache-{{ checksum "./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp/package.json" }}
+          paths: ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp/node_modules
+
+      - run:
+          name: NPM build
+          command: npm run lint --prefix ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp
+
+      - run:
+          name: Lint Project
+          command: npm run lint --prefix ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp
