@@ -8,16 +8,16 @@ jobs:
       - checkout
       - run: 
           name: Install NPM
-          command: cd ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp && npm install && cd ../../../
+          command: cd ./Template/DotnetTemplate/AngularApp && npm install && cd ../../../
 
       - save_cache:
-          key: npm-cache-{{ checksum "./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp/package.json" }}
+          key: npm-cache-{{ checksum "./Template/DotnetTemplate/AngularApp/package.json" }}
           paths: ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp/node_modules
 
       - run:
           name: NPM build
-          command: npm run lint --prefix ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp
+          command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
 
       - run:
           name: Lint Project
-          command: npm run lint --prefix ./angular5dotnetcore2.0/dotnetcoreplusangular5Template/AngularApp
+          command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
