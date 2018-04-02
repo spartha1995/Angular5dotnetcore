@@ -21,3 +21,14 @@ jobs:
     #   - run:
     #       name: Lint Project
     #       command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
+
+     # start proprietary DB using private Docker image
+     # with credentials stored in the UI
+     - run: |
+         docker login -u $Docker_UserName -p $Docker_Password
+
+     # build the application image
+     - run: docker build -t $Docker_Repo:$CIRCLE_BRANCH .
+
+     # deploy the image
+     - run: docker push $Docker_Repo:$CIRCLE_BRANCH
