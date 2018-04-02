@@ -16,8 +16,8 @@ jobs:
 
       - run:
           name: NPM build
-          command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
+          command: npm run build --prefix ./Template/DotnetTemplate/AngularApp
 
-      - run:
-          name: Lint Project
-          command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
+    #   - run:
+    #       name: Lint Project
+    #       command: npm run lint --prefix ./Template/DotnetTemplate/AngularApp
